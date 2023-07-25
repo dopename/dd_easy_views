@@ -1,3 +1,3 @@
 from setuptools import setup
 
-setup()
+setup(name='dd_easy_views')
