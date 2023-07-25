@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% load inventory_tags %}
+{% block content %}
+	<nav aria-label="breadcrumb">
+        {% if urls %}
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="{{urls.list}}">{{easy_object_name}} List</a></li>
+			<li class="breadcrumb-item active" aria-current="page">{{easy_object_name}} #{{object.id}}</li>
+		</ol>
+        {% endif %}
+	</nav>
+	<h1>{{easy_object_name}} #{{object.id}}</h1>
+	<div class="card">
+		<div class="card-body">
+            {% if urls.update %}
+			    <a href="{{urls.update}}" style="color:var(--warning);position:absolute;top:1rem;right:1rem;">Update</a>
+            {% endif %}
+			<div>
+                <p>
+				{% for name, value in object_fields.items %}
+                    <b>{{name|title}}</b>: {{value}}<br>
+                {% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

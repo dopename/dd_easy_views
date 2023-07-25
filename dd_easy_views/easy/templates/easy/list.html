@@ -1,0 +1,11 @@
+{% extends '_base.html' %}
+
+{% load render_table from django_tables2 %}
+{% load inventory_tags %}
+{% block content %}
+	<div style="position:relative;">
+		<h1>{{object_name}} List</h1>
+		<a href="{% url 'location_create' %}" class="btn btn-primary" style="position:absolute;top:0;right:0;">New {{object_name}}</a>
+	</div>
+	{% render_table table %}
+{% endblock %}

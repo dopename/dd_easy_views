@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+        {% if urls %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{urls.list}}">{{easy_object_name}} List</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Create</li>
+        </ol>
+        {% endif %}
+    </nav>
+
+	<h1>Create {{easy_object_name}}</h1>
+	<form method='POST'>
+		{% csrf_token %}
+		{{form|crispy}}
+		<input value="Create" type="submit" class="btn btn-success" />
+	</form>
+{% endblock %}
