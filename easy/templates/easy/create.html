@@ -1,7 +1,4 @@
-{% extends base_template %}
-
 {% load crispy_forms_tags %}
-{% block content_name %}
     <nav aria-label="breadcrumb">
         {% if urls %}
         <ol class="breadcrumb">
@@ -17,4 +14,3 @@
 		{{form|crispy}}
 		<input value="Create" type="submit" class="btn btn-success" />
 	</form>
-{% endblock %}

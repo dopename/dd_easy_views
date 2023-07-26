@@ -1,21 +1,17 @@
-{% extends '_base.html' %}
-
 {% load crispy_forms_tags %}
-{% block content %}
-    <nav aria-label="breadcrumb">
-        {% if urls %}
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{urls.list}}">{{easy_object_name}} List</a></li>
-            <li class="breadcrumb-item"><a href="{{urls.detail}}">{{easy_object_name}} #{{object.id}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Update</li>
-        </ol>
-        {% endif %}
-    </nav>
+<nav aria-label="breadcrumb">
+    {% if urls %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{urls.list}}">{{easy_object_name}} List</a></li>
+        <li class="breadcrumb-item"><a href="{{urls.detail}}">{{easy_object_name}} #{{object.id}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Update</li>
+    </ol>
+    {% endif %}
+</nav>
 
-	<h1>Update {{easy_object_name}}</h1>
-	<form method='POST'>
-		{% csrf_token %}
-		{{form|crispy}}
-		<input value="Update" type="submit" class="btn btn-success" />
-	</form>
-{% endblock %}
+<h1>Update {{easy_object_name}}</h1>
+<form method='POST'>
+    {% csrf_token %}
+    {{form|crispy}}
+    <input value="Update" type="submit" class="btn btn-success" />
+</form>
