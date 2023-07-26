@@ -1,0 +1,10 @@
+{% extends base_template %}
+
+{% load render_table from django_tables2 %}
+{% block content_name %}
+	<div style="position:relative;">
+		<h1>{{object_name}} List</h1>
+		<a href="{{urls.create}}" class="btn btn-primary" style="position:absolute;top:0;right:0;">New {{object_name}}</a>
+	</div>
+	{% render_table table %}
+{% endblock %}
